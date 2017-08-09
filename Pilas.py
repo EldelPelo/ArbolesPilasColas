@@ -18,18 +18,20 @@ class Pelicula:
 
 def main():
     pila = Pila()
-    prot = "Ryan"
+    prot = "Jared"
     pelicula0 = Pelicula("Deadpool", "Ryan")
     pelicula1 = Pelicula("Figth Club", "Norton")
     pelicula2 = Pelicula("Mr Nobody", "Jared")
-    pelicula4 = Pelicula("Deadpool", "Ryan")
+    pelicula4 = Pelicula("Los pitufos", "Ryan")
     pelicula3 = Pelicula("Terminator", "Arnold")
     pelicula5 = Pelicula("Deadpool", "Ryan")
-    pelicula6 = Pelicula("Deadpool", "Ryan")
-    pila.agregar(pelicula1)
+    pelicula6 = Pelicula("Suicide Squad", "Jared")
+    pila.agregar(pelicula0)
     pila.agregar(pelicula2)
     pila.agregar(pelicula3)
     pila.agregar(pelicula4)
+    pila.agregar(pelicula6)
+    
 
     while pila.vacia() == False:
         pelicula = pila.sacar()
