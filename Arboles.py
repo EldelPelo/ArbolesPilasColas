@@ -137,4 +137,52 @@ def main():
 
 if __name__ == "__main__":
     main()
+####################################################################
+class Nodo():
+    def __init__(self,valor,izq=None,der=None):
+        self.valor = valor
+        self.izq = izq
+        self.der = der
+class Cola:
+    def __init__(self):
+        self.cola = []
+    def agregar(self, elemento):
+        self.cola.append(elemento)
+    def sacar(self):
+        if self.vacia()==False:
+            return self.cola.pop(0)
+        else:
+            return "Cola vacia"
+    def vacia(self):
+        return self.cola == []
+def evaluar(arbol):
+    if(arbol.valor == '+'):
+        return evaluar(arbol.izq) + evaluar(arbol.izq)
+    if(arbol.valor == '-'):
+        return evaluar(arbol.izq) + evaluar(arbol.izq)
+    if(arbol.valor == '*'):
+        return evaluar(arbol.izq) + evaluar(arbol.izq)
+    if(arbol.valor == '/'):
+        return evaluar(arbol.izq) + evaluar(arbol.izq)
+    return int(arbol.valor)
+def crearNodo(valor):
+    return Nodo(valor)    
+def construirArbol(cadena):
+   cola = Cola()
+   posicion = 1
+   elemento = cadena[posicion]
+   raiz = crearNodo(cadena[0])
+   while(elemento == '+' or elemento == '-' or elemento == '/' or elemento == '*'):
+        cola.agregar(cadena[posicion])
+        posicion = posicion + 1
+    if(cadena[posicion]!=None):
+        cola.agregar(cadena[posicion])
+    while(cola.vacia == False):
+        
+def main():
+    string = raw_input()
+    cadena = string.split(" ")
+    print cadena
+if __name__ == "__main__":
+    main()
 
